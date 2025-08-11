@@ -63,6 +63,9 @@ export HOME=/root
 export LOGNAME=root
 unset LD_PRELOAD
 
+echo  "Run shutdown script"
+$busybox chroot $mnt /usr/bin/env sudo -i /etc/shutdown
+
 echo "Shutting down SSH Server"
 $busybox chmod 666 /dev/null
 
