@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 ######### IMPORT BOOTLINUX ENVIRONMENT #########
-SCRIPT_PATH=$(readlink -f $0)
-. ${SCRIPT_PATH%/*}/bootlinux_env
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+. ${SCRIPT_PATH}/bootlinux_env
 
 $busybox chroot $mnt /usr/bin/env su -l
